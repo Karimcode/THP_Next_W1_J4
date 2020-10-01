@@ -10,8 +10,8 @@ class Assassin extends Character {
 
   special = (victim) => {
     if (this.mana >= 20) {
-      game.showGame(`<br>shadow hit special feature ! ${victim.name} gets 7 damages and ${this.name} has absolute protection for next turn`);
-      game.showGame("<br>it costs 20 mana");
+      game.showGame(`<br>Shadow hit special attack ! ${victim.name} gets 7 damages and ${this.name} has total protection for next turn`);
+      game.showGame("<br>20 mana less");
       this.protection = true;
       if (!isNaN(victim.protection)) {
         victim.isProtected(7);
@@ -20,14 +20,14 @@ class Assassin extends Character {
       }
       if (victim.hp > 0) {
         this.hp -= 7;
-        game.showGame(`<br>the target doesn't die, ${this.name} got 7 damages in return`);
+        game.showGame(`<br>the target didn't die and  ${this.name} got 7 damages in return`);
         if (this.hp < 1) {
-          game.showGame(`<br>${this.name} died ... too bad !`)
+          game.showGame(`<br>${this.name} died ... It's so sad :( !`)
         }
       }
       this.mana -= 20;
     } else {
-      game.showGame("<br>insufficient mana, standard attack choosen")
+      game.showGame("<br> mana too low, standard attack choosen")
       this.dealDamage(victim);
     }
   };

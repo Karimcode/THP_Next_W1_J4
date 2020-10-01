@@ -9,8 +9,8 @@ class Wizard extends Character {
 
   special = (victim) => {
     if (this.mana >= 25) {
-      game.showGame(`<br>fireball special feature ! ${victim.name} takes 7 damages`);
-      game.showGame("<br>it costs 25 mana");
+      game.showGame(`<br>fireball special attack ! ${victim.name} takes 7 damages`);
+      game.showGame("<br>25 mana less");
       if (!isNaN(victim.protection)) {
         victim.isProtected(7);
       } else {
@@ -18,7 +18,7 @@ class Wizard extends Character {
       }
       this.mana -= 25;
     } else {
-      game.showGame("<br>insufficient mana, standard attack choosen")
+      game.showGame("<br>mana too low, standard attack choosen")
       this.dealDamage(victim);
     }
   };

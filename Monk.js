@@ -4,17 +4,17 @@ class Monk extends Character {
   };
 
   description = () => {
-    return "the Monk can heal him self by 8 hp, it costs 25 mana.";
+    return "the Monk can heal himself by 8 hp, it costs 25 mana.";
   };
 
   special = (victim) => {
     if (this.mana >= 25) {
-      game.showGame(`<br>heal special feature ! ${this.name} has +8 hp`);
-      game.showGame("<br>it costs 25 mana");
+      game.showGame(`<br>heal special attack ! ${this.name} has +8 hp`);
+      game.showGame("<br>25 mana less");
       this.hp += 8;
       this.mana -= 25;
     } else {
-      game.showGame("<br>insufficient mana, standard attack choosen")
+      game.showGame("<br>mana too low, standard attack choosen")
       this.dealDamage(victim);
     }
   };

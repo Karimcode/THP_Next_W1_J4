@@ -15,8 +15,8 @@ class Fighter extends Character {
 
   special = (victim) => {
     if (this.mana >= 20) {
-      game.showGame(`<br>dark vision special feature ! ${victim.name} takes 5 damages and ${this.name} has a protection of 2 points for the next attack`);
-      game.showGame("<br>it costs 20 mana")
+      game.showGame(`<br>dark vision special attack ! ${victim.name} takes 5 damages and ${this.name} has a protection of 2 points for the next attack`);
+      game.showGame("<br>20 mana less")
       if (!isNaN(victim.protection)) {
         victim.isProtected(5);
       } else {

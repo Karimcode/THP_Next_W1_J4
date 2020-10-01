@@ -9,8 +9,8 @@ class Paladin extends Character {
 
   special = (victim) => {
     if (this.mana >= 40) {
-      game.showGame(`<br>healing lighting special feature ! ${victim.name} takes 4 damages and ${this.name} healing +5`);
-      game.showGame("<br>it costs 40 mana");
+      game.showGame(`<br>healing lighting special attack ! ${victim.name} takes 4 damages and ${this.name} healing +5`);
+      game.showGame("<br>40 mana less");
       if (!isNaN(victim.protection)) {
         victim.isProtected(4);
       } else {
@@ -19,7 +19,7 @@ class Paladin extends Character {
       this.hp += 5;
       this.mana -= 40;
     } else {
-      game.showGame("<br>insufficient mana, standard attack choosen")
+      game.showGame("<br>mana too low, standard attack choosen")
       this.dealDamage(victim);
     }
   };
